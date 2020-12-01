@@ -1,4 +1,4 @@
-// import { fetchData } from "./components/TheDataMiner.js";
+import { fetchData } from "./components/TheDataMiner.js";
 // import ProfCard from "./components/TheProfCard.js";
 
 (() => {
@@ -12,27 +12,27 @@
             anotherMessage: "more text, so simple! much winning",
             removeAformat: true,
             showBioData: false,
-            // professors: [],
-            // currentProfData: {},
+            professors: [],
+            currentProfData: {}
 
-            professors: [
-                {name: "Justin", role: "coordinator", nickname: "nitsuJ"},
-                {name: "John", role: "prof", nickname: "super chill"},
-                {name: "Joe", role: "prof", nickname: "Teddy Bear"},
-            ]
+            // professors: [
+            //     {name: "Justin", role: "coordinator", nickname: "nitsuJ"},
+            //     {name: "John", role: "prof", nickname: "super chill"},
+            //     {name: "Joe", role: "prof", nickname: "Teddy Bear"},
+            // ]
         },
 
         // this is the "mounted" lifecycle hook. Vue is done creating itself, and has attached itself to the "app" div on the page
         mounted: function() {
             console.log("Vue is mounted, trying a fetch for the initial data");
 
-            this.professors.push({name:"Jarrod", role: "supermodel", nickname:"Zoolander"})
+            // this.professors.push({name:"Jarrod", role: "supermodel", nickname:"Zoolander"})
             
-            // fetchData("./includes/index.php")
-            //     .then(data => {
-            //         data.forEach(prof => this.professors.push(prof));
-            //     })
-            //     .catch(err => console.error(err));            
+        fetchData("./includes/index.php")
+        .then(data => {
+            data.forEach(prof => this.professors.push(prof));
+        })
+        .catch(err => console.error(err));            
         },
 
         // run a method when we change our view (update the DOM with Vue)
@@ -63,7 +63,7 @@
 
             removeProf(target) {
                 // remove this prof from the professors array
-                console.log('clicked to remove prof', target, target.name);
+                console.log('clicked to vie prof bio data', target, target.name);
                 // the "this" keyword inside a vue instance REFERS to the Vue instance itself by default
                 this.showBioData = this.showBioData ? false : true;
                 // make the selected prof's data visible
@@ -71,7 +71,7 @@
                 // this.$delete(this.professors, target);
                 
                // make the selected prof's data visible
-                // this.currentProfData = target;
+               this.currentProfData = target;
             }
         },
 

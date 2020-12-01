@@ -5,7 +5,7 @@
     $result = array();
 
     function getAllUsers($conn) {
-        $query = "SELECT * FROM profs";
+        $query = "SELECT * FROM tbl_profs";
 
         $runQuery = $conn->query($query);
 
@@ -18,7 +18,7 @@
     }
 
     function getSingleUser($conn, $id) {
-        $query = "SELECT * FROM profs WHERE id=" . $id . "";
+        $query = "SELECT * FROM tbl_profs WHERE id=" . $id . "";
 
         $runQuery = $conn->query($query);
 

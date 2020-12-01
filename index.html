@@ -21,16 +21,17 @@
 
             <li v-for="prof, index in professors">
                 <p>Prof Name: {{ prof.name }}, Role: {{ prof.role }}</p>
-
-                <!-- <a href="" class="remove-prof" @click.prevent="showProfData(prof)" :class="{'prof-button-modifier' : removeAformat}">Show {{ prof.name}}'s info</a>  -->
+<!-- 
+                <a href="" class="remove-prof" @click.prevent="showProfData(prof)" :class="{'prof-button-modifier' : removeAformat}">Show {{ prof.name}}'s info</a>  -->
                 
-                <a href="" class="remove-prof" @click.prevent="removeProf(index)" :class="{'prof-button-modifier' : removeAformat}">Remove {{ prof.name}}</a>
+                <a href="" class="remove-prof" @click.prevent="removeProf(prof)" :class="{'prof-button-modifier' : removeAformat}">Show {{ prof.name}}'s info</a>
             </li>
         </ul>
 
         <!-- show more section -->
         <section class="bio-data" :class="{'show-bio' : showBioData}">
-            <p> "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+            <h1>{{ currentProfData.name }}</h1>
+            <p> {{ currentProfData.nickname }}</p>
         </section>
     </main>
 </body>
