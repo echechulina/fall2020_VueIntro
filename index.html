@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Working with Vue</title>
+
+    <link rel="stylesheet" href=css/main.css>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+    <main id="app">
+        <h1 @click="clickHeader">{{ message }}</h1>
+        <p>{{anotherMessage}}</p>
+
+        <!-- show the prof data in profs array -->
+        <ul>
+            <!-- this is a custom Vue component defined in main.js -->
+            <!-- <prof-card v-for="prof in professors" :prof="prof" :key="prof.id"></prof-card> -->
+
+            <li v-for="prof, index in professors">
+                <p>Prof Name: {{ prof.name }}, Role: {{ prof.role }}</p>
+
+                <!-- <a href="" class="remove-prof" @click.prevent="showProfData(prof)" :class="{'prof-button-modifier' : removeAformat}">Show {{ prof.name}}'s info</a>  -->
+                
+                <a href="" class="remove-prof" @click.prevent="removeProf(index)" :class="{'prof-button-modifier' : removeAformat}">Remove {{ prof.name}}</a>
+            </li>
+        </ul>
+
+        <!-- show more section -->
+        <section class="bio-data" :class="{'show-bio' : showBioData}">
+            <p> "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+        </section>
+    </main>
+</body>
+
+<script src="js/main.js" type="module"></script>
+</html>
