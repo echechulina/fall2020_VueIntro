@@ -49,29 +49,29 @@ import { fetchData } from "./components/TheDataMiner.js";
                 console.log("clicked on the header");
             },
 
-            // showProfData(target) {
-            //     // remove this prof from the professors array
-            //     console.log('clicked to view prof bio data', target, target.name);
-            //     // the "this" keyword inside a vue instance REFERS to the Vue instance itself by default
+            showProfData(target) {
+                // remove this prof from the professors array
+                console.log('clicked to view prof bio data', target, target.name);
+                // the "this" keyword inside a vue instance REFERS to the Vue instance itself by default
 
-            //     // toggle the property between true and false using a ternary statement
-            //     this.showBioData = this.showBioData ? false : true;
+                // toggle the property between true and false using a ternary statement
+                this.showBioData = this.showBioData ? false : true;
 
-            //     // make the selected prof's data visible
-            //     this.currentProfData = target;
-            // },            
+                // make the selected prof's data visible
+                this.currentProfData = target;
+            },            
 
             removeProf(target) {
                 // remove this prof from the professors array
-                console.log('clicked to vie prof bio data', target, target.name);
+                console.log('clicked to remove prof', target, target.name);
                 // the "this" keyword inside a vue instance REFERS to the Vue instance itself by default
-                this.showBioData = this.showBioData ? false : true;
+                // this.showBioData = this.showBioData ? false : true;
                 // make the selected prof's data visible
                 // this.professors.splice(this.professors.indexOf(target), 1);
-                // this.$delete(this.professors, target);
+                this.$delete(this.professors, target);
                 
                // make the selected prof's data visible
-               this.currentProfData = target;
+            //    this.currentProfData = target;
             }
         },
 
