@@ -17,15 +17,15 @@
         <!-- show the prof data in profs array -->
         <ul>
             <!-- this is a custom Vue component defined in main.js -->
-            <!-- <prof-card v-for="prof in professors" :prof="prof" :key="prof.id"></prof-card> -->
+            <prof-card v-for="prof in professors" :prof="prof" :key="prof.id"></prof-card>
 
-            <li v-for="prof, index in professors">
+            <!-- <li v-for="prof, index in professors">
                 <p>Prof Name: {{ prof.name }}, Role: {{ prof.role }}</p>
 
                 <a href="" class="remove-prof" @click.prevent="showProfData(prof)" :class="{'prof-button-modifier' : removeAformat}">Show {{ prof.name}}'s info</a> 
                 
                 <a href="" class="remove-prof" @click.prevent="removeProf(index)" :class="{'prof-button-modifier' : removeAformat}">Remove {{ prof.name}}'s info</a>
-            </li>
+            </li> -->
         </ul>
 
         <!-- show more section -->

@@ -1,5 +1,5 @@
 import { fetchData } from "./components/TheDataMiner.js";
-// import ProfCard from "./components/TheProfCard.js";
+import ProfCard from "./components/TheProfCard.js";
 
 (() => {
 
@@ -75,8 +75,8 @@ import { fetchData } from "./components/TheDataMiner.js";
             }
         },
 
-        // components: {
-        //     "prof-card": ProfCard
-        // }
+        components: {
+            "prof-card": ProfCard
+        }
     }).$mount("#app"); // also connects Vue to your wrapper in HTML
 })();
